@@ -16,11 +16,11 @@ assert class1_sample.shape == (3,20), "The matrix has not the dimensions 3x20"
 all_samples = np.concatenate((class1_sample, class2_sample), axis=1)
 assert all_samples.shape == (3,40), "The matrix has not the dimensions 3x40"
 
-#print sample dataset of 3 dimension
+#print sample dataset of 3*40 dimension
 print("sample data set\n")
 print(all_samples)
 
-#Computing the 3-dimensional mean vector
+#Computing the 3-dimensional mean vector for each dimension
 mean_x = np.mean(all_samples[0,:])
 mean_y = np.mean(all_samples[1,:])
 mean_z = np.mean(all_samples[2,:])
@@ -83,3 +83,5 @@ print('Matrix W:\n', matrix_w)
 
 transformed = matrix_w.T.dot(all_samples)
 assert transformed.shape == (2,40), "The matrix is not 2x40 dimensional."
+
+print(transformed)
